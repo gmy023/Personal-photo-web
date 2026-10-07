@@ -1,0 +1,285 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    "Helvetica Neue", Arial, "PingFang SC", "Microsoft YaHei", sans-serif;
+  color: #333;
+  background-color: #f7f5f0;
+  line-height: 1.7;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+:root {
+  --main-color: #2f6f5e;
+  --text-light: #6b6b6b;
+  --card-bg: #ffffff;
+  --border-color: #e2ded6;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 18px 6%;
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-color);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--main-color);
+  letter-spacing: 1px;
+}
+
+.nav {
+  display: flex;
+  gap: 24px;
+}
+
+.nav a {
+  font-size: 16px;
+  color: var(--text-light);
+  padding-bottom: 4px;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s;
+}
+
+.nav a:hover {
+  color: var(--main-color);
+}
+
+.nav a.active {
+  color: var(--main-color);
+  font-weight: bold;
+  border-bottom-color: var(--main-color);
+}
+
+.hero {
+  text-align: center;
+  padding: 90px 6%;
+  background: linear-gradient(160deg, #eaf1ee 0%, #f7f5f0 100%);
+}
+
+.hero h1 {
+  font-size: 40px;
+  color: var(--main-color);
+  margin-bottom: 16px;
+  letter-spacing: 2px;
+}
+
+.hero p {
+  font-size: 17px;
+  color: var(--text-light);
+  max-width: 560px;
+  margin: 0 auto 32px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 13px 32px;
+  background-color: var(--main-color);
+  color: #ffffff;
+  border-radius: 30px;
+  font-size: 16px;
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background-color: #24564a;
+  transform: translateY(-2px);
+}
+
+.section {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 60px 6%;
+}
+
+.section-title {
+  font-size: 26px;
+  color: var(--main-color);
+  margin-bottom: 24px;
+  padding-left: 14px;
+  border-left: 5px solid var(--main-color);
+}
+
+.section-text {
+  color: #555;
+  font-size: 16px;
+}
+
+/* 进度条列表 */
+.progress-list {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.progress-head {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  margin-bottom: 8px;
+  color: #444;
+}
+
+.progress-bar {
+  height: 12px;
+  background-color: #e6e2da;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #4a9d85, #2f6f5e);
+  border-radius: 10px;
+}
+
+.page-title {
+  text-align: center;
+  padding: 60px 6% 30px;
+}
+
+.page-title h1 {
+  font-size: 34px;
+  color: var(--main-color);
+  margin-bottom: 12px;
+  letter-spacing: 2px;
+}
+
+.page-title p {
+  color: var(--text-light);
+  font-size: 16px;
+}
+
+.gallery {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 20px 6% 70px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.photo {
+  background-color: var(--card-bg);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.photo:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 22px rgba(0, 0, 0, 0.12);
+}
+
+.photo img {
+  height: 200px;
+  object-fit: cover;
+}
+
+.photo figcaption {
+  padding: 14px 16px;
+  font-size: 14px;
+  color: var(--text-light);
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+  padding: 28px 6%;
+  background-color: #ffffff;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-light);
+  font-size: 14px;
+}
+
+@media (max-width: 900px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+
+  .hero {
+    padding: 70px 6%;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    flex-direction: column;
+    gap: 10px;
+    padding: 16px 5%;
+  }
+
+  .nav {
+    gap: 20px;
+  }
+
+  .hero {
+    padding: 55px 5%;
+  }
+
+  .hero h1 {
+    font-size: 26px;
+    letter-spacing: 1px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .section {
+    padding: 45px 5%;
+  }
+
+  .section-title {
+    font-size: 22px;
+  }
+
+  .page-title {
+    padding: 40px 5% 20px;
+  }
+
+  .page-title h1 {
+    font-size: 26px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    padding: 16px 5% 50px;
+  }
+
+  .photo img {
+    height: 220px;
+  }
+}
